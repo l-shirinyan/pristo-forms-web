@@ -1,0 +1,34 @@
+.icon,
+.eicon {
+  font-size: 1.125rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.icon-xxs {
+  font-size: 0.625rem !important;
+}
+
+.icon-xs {
+  font-size: 0.75rem !important;
+}
+
+.icon-sm {
+  font-size: 0.875rem !important;
+}
+
+.icon-base {
+  font-size: 1rem !important;
+}
+
+.icon-xl {
+  font-size: 1.25rem !important;
+}
+
+.icon-2xl {
+  font-size: 1.5rem !important;
+}
+
+.icon-3xl {
+  font-size: 1.875rem !important;
+}
