@@ -8,8 +8,10 @@
       <ButtonTest v-on:clicked="button2Clicked">{{
         $t('change_theme')
       }}</ButtonTest>
+      <ButtonTest v-on:clicked="isModalOpen = true"> Open Modal</ButtonTest>
       <ButtonDropdown>{{ $t('test') }}</ButtonDropdown>
     </div>
+    <TestModal v-if="isModalOpen" v-on:close="isModalOpen = false" />
   </div>
 </template>
 
@@ -17,12 +19,14 @@
   import { defineComponent } from 'vue';
   import ButtonTest from '../components/ButtonTest.vue';
   import ButtonDropdown from '../components/ButtonDropdown.vue';
+  import TestModal from './TestModal.vue';
   import { setDocumentTheme } from '../utils/setDocumentTheme';
 
   export default defineComponent({
-    components: { ButtonTest, ButtonDropdown },
+    components: { ButtonTest, ButtonDropdown, TestModal },
     data: function () {
       return {
+        isModalOpen: false,
         isDarkMode: false
       };
     },
