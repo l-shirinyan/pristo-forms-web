@@ -129,10 +129,10 @@
   import { defineComponent } from 'vue';
   import CustomButton from '../components/CustomButton.vue';
   import ButtonDropdown from '../components/ButtonDropdown.vue';
-  import ImgModal from './ImgModal.vue';
+  import ImgModal from '../components/ImgModal.vue';
   import { setDocumentTheme } from '../utils/setDocumentTheme';
-  import DetailsModal from './DetailsModal.vue';
-  import LgModal from './LgModal.vue';
+  import DetailsModal from '../components/DetailsModal.vue';
+  import LgModal from '../components/LgModal.vue';
 
   export default defineComponent({
     components: { LgModal, DetailsModal, CustomButton, ButtonDropdown, ImgModal },

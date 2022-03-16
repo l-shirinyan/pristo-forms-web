@@ -28,7 +28,7 @@
             <div class='sm:h-5 sm:w-5 h-4 w-4 mt-2 ml-1.5 rounded-full outline outline-red-400'></div>
           </div>
         </div>
-        <div class='sm:block hidden bg-midnight dark:bg-dark-open-btn rounded text-white py-2 px-5'>{{ item.openBtn }}</div>
+        <div class='sm:block hidden bg-midnight dark:bg-dark-open-btn rounded text-white py-2 px-5'>{{ $t(item.openBtn) }}</div>
         <svg  class='sm:hidden block h-6 w-6 mt-2' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
