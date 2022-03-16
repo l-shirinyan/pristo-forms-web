@@ -1,5 +1,5 @@
 <template>
-  <div v-click-away="onClickAway">
+  <div v-click-away="onClickAway" v-on:clicked="buttonClicked ">
     <button type="button" ref="buttonRef" v-on:click="buttonClicked">
       <i class="icon icon-dot-menu text-gray-dark"></i>
     </button>

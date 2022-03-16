@@ -1,7 +1,10 @@
 <template>
-  <MPRModalDialog size="md" title="Test Modal">
-    <div>Test Modal</div>
-  </MPRModalDialog>
+  <button
+    class=""
+    v-on:click="$emit('clicked')"
+  >
+    <slot></slot>
+  </button>
 </template>
 
 <script lang="ts">

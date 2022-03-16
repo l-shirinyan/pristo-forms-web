@@ -33,6 +33,7 @@
               v-show="showModal"
               :class="modalClasses"
               v-on:click="(e) => e.stopPropagation()"
+              class='bg-white dark:bg-dark-back text-font-brown dark:text-white'
             >
               <button :class="buttonClasses" v-on:click="closeClicked">
                 <i class="icon icon-close text-gray-dark icon-sm"></i>
@@ -48,7 +49,7 @@
               </div>
 
               <div class="flex sm:justify-end justify-center">
-                <ButtonTest
+                <CustomButton
                   class="text-indigo-dark border border-indigo-dark font-medium w-32 mt-10 me-5"
                   size="sm"
                   v-on:click="closeClicked"
@@ -56,8 +57,8 @@
                   v-if="hasCancelButton"
                 >
                   {{ $t('oper.cancel') }}
-                </ButtonTest>
-                <ButtonTest
+                </CustomButton>
+                <CustomButton
                   class="bg-indigo-dark dark:bg-blue-medium text-white font-normal w-32 mt-10"
                   size="sm"
                   v-on:click="confirm"
@@ -65,7 +66,7 @@
                   v-if="hasConfirmButton"
                 >
                   {{ confirmButtonLabel }}
-                </ButtonTest>
+                </CustomButton>
               </div>
             </div>
           </transition>
@@ -77,13 +78,13 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import ButtonTest from './ButtonTest.vue';
+  import CustomButton from './CustomButton.vue';
   import i18n from '../localization';
 
   export default defineComponent({
     emits: ['close', 'confirm'],
     components: {
-      ButtonTest: ButtonTest
+      CustomButton: CustomButton
     },
     data: function () {
       return {
