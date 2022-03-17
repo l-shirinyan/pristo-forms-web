@@ -92,6 +92,7 @@
       };
     },
     props: {
+      detailsModal: String,
       size: { type: String, required: false, default: 'default' },
       disabled: { type: Boolean, required: false, default: false },
       hasConfirmButton: { type: Boolean, required: false, default: false },
@@ -125,20 +126,43 @@
       },
       modalClasses: function (): string[] {
         let classes = [
-          ' relative bg-white sm:rounded-xl rounded-sm text-left text-gray-dark overflow-auto shadow-md p-3 sm:p-8 w-full min-w-80'
+          ' relative bg-white sm:rounded-xl rounded-sm text-left text-gray-dark overflow-auto shadow-md p-3 sm:p-8'
         ];
-        switch (this.size) {
-          case 'sm':
-            classes.push('sm:w-1/4 sm:min-w-96');
-            break;
-          case 'md':
-            classes.push('sm:w-1/3 sm:min-w-160');
-            break;
-          case 'lg':
-            classes.push('sm:w-1/2 sm:min-w-200');
-            break;
-          default:
-            classes.push('sm:w-4/5');
+        if(this.detailsModal === 'details') {
+          switch (this.size) {
+            case 'md':
+              classes.push('w-[500px]');
+              break;
+            case 'lg':
+              classes.push('w-[500px]');
+              break;
+            default:
+              classes.push('w-[500px]');
+          }
+        } else if (this.detailsModal === 'image') {
+          switch (this.size) {
+            case 'md':
+              classes.push('w-[690px]');
+              break;
+            case 'lg':
+              classes.push('w-[690px]');
+              break;
+            default:
+              classes.push('w-[690px]');
+          }
+        }
+        else
+        {
+          switch (this.size) {
+            case 'md':
+              classes.push('w-[220px]');
+              break;
+            case 'lg':
+              classes.push('w-[220px]');
+              break;
+            default:
+              classes.push('w-[220px]');
+          }
         }
         return classes;
       }

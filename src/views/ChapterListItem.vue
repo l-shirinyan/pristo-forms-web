@@ -12,9 +12,7 @@
       <div class='flex gap-4 sm:flex-row flex-row-reverse'>
         <div class='sm:mt-2 mt-3 font-medium sm:text-base text-xs text-font-brown dark:text-white'>{{ $t(item.chapterState) }}</div>
         <div class='sm:h-8 sm:w-8 h-7 w-7 mt-1' v-if='item.chapterState === "progress" '>
-          <svg class='text-cyan' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+          <i class='icon icon-in-progrress text-progress-btn'></i>
         </div>
         <div class='sm:h-8 sm:w-8 h-7 w-7 mt-1' v-else-if='item.chapterState === "complete" '>
           <svg class='text-green-complete' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -22,7 +20,7 @@
           </svg>
         </div>
         <div class='h-5 sm:w-8 w-5 mt-1 ml-1.5' v-else>
-          <div class='sm:h-5 sm:w-5 h-4 w-4 mt-2 ml-1.5 rounded-full outline outline-red-400'></div>
+          <i class='icon icon-not-started text-light-pink'></i>
         </div>
       </div>
       <div @click="$router.push('/guideline_first')"
@@ -30,9 +28,8 @@
       >
         {{ $t(item.openBtn) }}
       </div>
-      <svg :class='chevronClasses' class='sm:hidden block h-6 w-6 mt-2' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
+      <i v-if='this.$i18n.locale === "en"' class='icon icon-purple-right-arrow sm:hidden block h-6 w-6 mt-2'></i>
+      <i v-if='this.$i18n.locale === "he"' class='icon icon-purple-left-arrow sm:hidden block h-6 w-6 mt-2'></i>
     </div>
   </div>
 </template>

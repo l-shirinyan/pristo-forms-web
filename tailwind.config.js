@@ -18,6 +18,7 @@ module.exports = {
         'cyan': '#C1DBFF',
         'black': '#000000',
         'lg-btn': '#CED4DA',
+        'progress-btn': '#8CBAF8',
         'lg-dropdown': '#41414129',
         'selected-dropdown': '#C1DBFF',
         'dark-selected-dropdown': '#696772',

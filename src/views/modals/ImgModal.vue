@@ -1,5 +1,5 @@
 <template>
-  <MPRModalDialog size="md" :title="$t('upload_file')">
+  <MPRModalDialog detailsModal='image' :title="$t('upload_file')">
     <div class='p-1'>
       <div>{{ $t('choose_file') }}</div>
       <div class='flex gap-8 p-4 mt-8 outline outline-2 outline-gray-200 rounded-md'>

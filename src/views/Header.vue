@@ -7,14 +7,10 @@
 
         <CustomButton class='outline outline-1 outline-lg-btn dark:outline-none rounded-md py-1 px-2 mr-8 dark:bg-dark-back' v-on:clicked="isLanguageDropdownOpen = !isLanguageDropdownOpen">
           <div class='flex gap-3 '>
-            <svg class='h-4 w-4 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-             <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-            </svg>
+            <i class='icon icon-locale dark:text-white'></i>
             <span v-if='$i18n.locale === "en" ' class='text-sm text-font-brown dark:text-white'>EN</span>
             <span  v-if='$i18n.locale === "he" ' class='text-sm text-font-brown dark:text-white'>עב</span>
-            <svg class='h-4 w-4 text-font-brown dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
+            <i class='icon icon-down-arrow dark:text-white'></i>
           </div>
         </CustomButton>
 
@@ -35,35 +31,21 @@
         </div>
 
         <CustomButton  class='mr-6' v-on:clicked="isImageModalOpen = true">
-          <svg class='h-4 w-4 text-font-brown dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
-          </svg>
+          <i class='icon icon-attachment dark:text-white'></i>
         </CustomButton>
 
         <CustomButton  class='mr-6' v-on:clicked="isOpenDetails = true">
-          <svg class='h-4 w-4 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" />
-          </svg>
+          <i class='icon icon-entity-details dark:text-white'></i>
         </CustomButton>
 
         <CustomButton class='mr-6'>
-          <svg class='h-4 w-4 fill-green-pin dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
+          <i class='icon icon-location text-green-pin'></i>
         </CustomButton>
 
-        <CustomButton v-if='isDarkMode' v-on:clicked="darkModeButtonClicked" :class='styles.darkMargin'>
-          <svg class='h-4 w-4 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
+        <CustomButton v-on:clicked="darkModeButtonClicked" :class='styles.darkMargin'>
+          <i class='icon icon-theme dark:text-white'></i>
         </CustomButton>
 
-        <CustomButton v-if='!isDarkMode' v-on:clicked="darkModeButtonClicked" :class='styles.darkMargin'>
-          <svg class='h-4 w-5 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-        </CustomButton>
       </div>
 
       <ButtonDropdown class="lg:hidden text-font-brown dark:text-white">
@@ -168,7 +150,7 @@
           this.styles.darkMargin = '';
           this.styles.dropdown = ''
         }
-        this.isLanguageDropdownOpenDropdown = false
+        this.isLanguageDropdownOpen = false
       },
       darkModeButtonClicked: function () {
         this.isDarkMode = !this.isDarkMode;
