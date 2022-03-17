@@ -1,5 +1,6 @@
 import { createI18n } from 'vue-i18n';
 import getBrowserLocale from '../utils/getBrowserLocale';
+import 'tw-elements';
 
 const messages = {
   en: {
@@ -40,8 +41,8 @@ const messages = {
     parental_payments: 'תשלומי הורים',
     cleanliness_health: 'ניקיון ובריאות',
     summary_with_manager: 'סיכום מול מנהל',
-    progress: 'In progress',
-    complete: 'Complete',
+    progress: 'בתהליך',
+    complete: 'לְהַשְׁלִים',
     not_started: 'טרם החל',
     open: 'פתיחה',
     entity_details: 'פרטי יישות',

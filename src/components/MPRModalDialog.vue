@@ -109,7 +109,7 @@
     computed: {
       modalBackdropClasses: function (): string[] {
         let classes = [
-          `fixed z-50 inset-0 overflow-y-auto bg-black bg-opacity-60 font-${this.$i18n.locale}`
+          `fixed z-50 inset-0 overflow-y-auto bg-black sm:px px-2.5 sm:pt pt-16 bg-opacity-60 font-${this.$i18n.locale}`
         ];
         if (this.disabled) {
           classes.push('cursor-not-allowed');
@@ -125,7 +125,7 @@
       },
       modalClasses: function (): string[] {
         let classes = [
-          ' relative bg-white sm:rounded-xl text-left text-gray-dark overflow-auto shadow-md p-3 sm:p-8 w-full min-w-80'
+          ' relative bg-white sm:rounded-xl rounded-sm text-left text-gray-dark overflow-auto shadow-md p-3 sm:p-8 w-full min-w-80'
         ];
         switch (this.size) {
           case 'sm':

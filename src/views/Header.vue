@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-white dark:bg-dark-header h-14 flex lg:justify-evenly justify-between">
-    <div class='md:w-4/6 w-full md:mx-auto mx-5 flex items-center lg:justify-evenly justify-between'>
-      <div :class='styles.instMargin' class='lg:block hidden text-sm text-font-brown dark:text-white'>{{ $t('institution') }}</div>
+  <div class="bg-white dark:bg-dark-header h-14 lg:justify-evenly justify-between px-5">
+    <div class='max-w-6xl  md:mx-auto flex lg:pt pt-4 lg:justify-evenly justify-between'>
+      <div :class='styles.instMargin' class='lg:block hidden text-sm text-font-brown dark:text-white '>{{ $t('institution') }}</div>
       <div class='lg:mx-auto sm:text-base text-sm text-font-brown dark:text-white font-bold'>{{ $t('high_school') }}</div>
-      <div class="py-2 lg:flex hidden">
+      <div class="lg:flex hidden">
 
-        <CustomButton class='outline outline-1 outline-lg-btn dark:outline-none rounded-md py-1 px-2 mr-8 dark:bg-dark-back' v-on:clicked="isOpenLgDropdown = !isOpenLgDropdown">
+        <CustomButton class='outline outline-1 outline-lg-btn dark:outline-none rounded-md py-1 px-2 mr-8 dark:bg-dark-back' v-on:clicked="isLanguageDropdownOpen = !isLanguageDropdownOpen">
           <div class='flex gap-3 '>
             <svg class='h-4 w-4 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
              <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -18,13 +18,13 @@
           </div>
         </CustomButton>
 
-        <div v-if='isOpenLgDropdown' id='dropdown' class='absolute h-[112] w-28 mt-8 bg-white dark:bg-dark-back dark:outline outline-[#CED4DA33] outline-1 rounded-md shadow-xl'>
-          <CustomButton v-on:clicked="buttonClicked('en')"
+        <div v-if='isLanguageDropdownOpen' id='dropdown' class='absolute h-[112] w-28 mt-8 bg-white dark:bg-dark-back dark:outline outline-[#CED4DA33] outline-1 rounded-md shadow-xl'>
+          <CustomButton v-on:clicked="languageButtonClicked('en')"
                       class='cursor-pointer w-28 block px-4 py-2 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
             English
           </CustomButton>
           <div class='h-px bg-gray-200 dark:bg-[#CED4DA33] w-28'></div>
-          <CustomButton v-on:clicked="buttonClicked('he')"
+          <CustomButton v-on:clicked="languageButtonClicked('he')"
                       class='cursor-pointer w-28 block px-4 py-2 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
             עברית
           </CustomButton>
@@ -34,7 +34,7 @@
           </CustomButton>
         </div>
 
-        <CustomButton  class='mr-6' v-on:clicked="isModalOpen = true">
+        <CustomButton  class='mr-6' v-on:clicked="isImageModalOpen = true">
           <svg class='h-4 w-4 text-font-brown dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
           </svg>
@@ -53,13 +53,13 @@
           </svg>
         </CustomButton>
 
-        <CustomButton v-if='isDarkMode' v-on:clicked="button2Clicked" :class='styles.darkMargin'>
+        <CustomButton v-if='isDarkMode' v-on:clicked="darkModeButtonClicked" :class='styles.darkMargin'>
           <svg class='h-4 w-4 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </CustomButton>
 
-        <CustomButton v-if='!isDarkMode' v-on:clicked="button2Clicked" :class='styles.darkMargin'>
+        <CustomButton v-if='!isDarkMode' v-on:clicked="darkModeButtonClicked" :class='styles.darkMargin'>
           <svg class='h-4 w-5 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
@@ -93,7 +93,7 @@
             <div>Show entity details</div>
           </CustomButton>
 
-            <CustomButton class='flex gap-2 px-4 mt-6' v-on:clicked="isModalOpen = true">
+            <CustomButton class='flex gap-2 px-4 mt-6' v-on:clicked="isImageModalOpen = true">
               <div>
                 <svg class='h-4 w-4 text-font-brown dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
@@ -102,7 +102,7 @@
               <div>Form attachment</div>
             </CustomButton>
 
-          <CustomButton class='flex gap-2 px-4 mt-6' v-on:clicked="isOpenLg = true">
+          <CustomButton class='flex gap-2 px-4 mt-6' v-on:clicked="isLanguageModalOpen = true">
             <div>
               <svg class='h-4 w-4 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -114,12 +114,12 @@
         </div>
       </ButtonDropdown>
 
-      <ImgModal v-if="isModalOpen" v-on:close="isModalOpen = false" />
+      <ImgModal v-if="isImageModalOpen" v-on:close="isImageModalOpen = false" />
       <DetailsModal v-if="isOpenDetails" v-on:close="isOpenDetails = false" />
       <LgModal
         @close-language-modal='closeLanguageModal'
-        v-if="isOpenLg"
-        v-on:close="isOpenLg = false"
+        v-if="isLanguageModalOpen"
+        v-on:close="isLanguageModalOpen = false"
       />
     </div>
   </div>
@@ -129,20 +129,20 @@
   import { defineComponent } from 'vue';
   import CustomButton from '../components/CustomButton.vue';
   import ButtonDropdown from '../components/ButtonDropdown.vue';
-  import ImgModal from '../components/ImgModal.vue';
+  import ImgModal from './modals/ImgModal.vue';
   import { setDocumentTheme } from '../utils/setDocumentTheme';
-  import DetailsModal from '../components/DetailsModal.vue';
-  import LgModal from '../components/LgModal.vue';
+  import DetailsModal from './modals/DetailsModal.vue';
+  import LgModal from './modals/LgModal.vue';
 
   export default defineComponent({
     components: { LgModal, DetailsModal, CustomButton, ButtonDropdown, ImgModal },
     data: function () {
       return {
         isOpenDetails: false,
-        isOpenLgDropdown: false,
-        isModalOpen: false,
+        isLanguageDropdownOpen: false,
+        isImageModalOpen: false,
         isDarkMode: false,
-        isOpenLg: false,
+        isLanguageModalOpen: false,
         styles: {
           instMargin: '',
           darkMargin: '',
@@ -153,9 +153,9 @@
     },
     methods: {
       closeLanguageModal: function() {
-        this.isOpenLg = false
+        this.isLanguageModalOpen = false
       },
-      buttonClicked: function (language: string) {
+      languageButtonClicked: function (language: string) {
         this.$i18n.locale = language;
 
         if ( this.$i18n.locale === 'he') {
@@ -168,9 +168,9 @@
           this.styles.darkMargin = '';
           this.styles.dropdown = ''
         }
-        this.isOpenLgDropdown = false
+        this.isLanguageDropdownOpenDropdown = false
       },
-      button2Clicked: function () {
+      darkModeButtonClicked: function () {
         this.isDarkMode = !this.isDarkMode;
         setDocumentTheme(this.isDarkMode);
       },

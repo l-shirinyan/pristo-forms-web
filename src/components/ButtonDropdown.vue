@@ -1,6 +1,6 @@
 <template>
-  <div v-click-away="onClickAway" v-on:clicked="buttonClicked ">
-    <button type="button" ref="buttonRef" v-on:click="buttonClicked">
+  <div v-click-away="onClickAway" v-on:clicked="openDropdown ">
+    <button type="button" ref="buttonRef" v-on:click="openDropdown">
       <i class="icon icon-dot-menu text-gray-dark"></i>
     </button>
     <div
@@ -34,7 +34,7 @@
           this.isOpen = false;
         }
       },
-      buttonClicked: function (): void {
+      openDropdown: function (): void {
         if (!this.isOpen) {
           this.$nextTick(() =>
             this.$nextTick(() => {

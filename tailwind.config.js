@@ -27,6 +27,7 @@ module.exports = {
         'dark-num-btn': '#A5C3ED',
         'dark-num': '#0A336B',
         'dark-compete': '#9EC8B8',
+        'guideline': '#EBB32E',
       },
       fontFamily: {
         en: ['"Poppins"', 'sans-serif'],
@@ -37,7 +38,9 @@ module.exports = {
   variants: {
     extend: {}
   },
+  content: ['./src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js'],
   plugins: [
     require('tailwindcss-rtl'),
+    require('tw-elements/dist/plugin'),
   ]
 };

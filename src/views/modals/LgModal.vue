@@ -1,12 +1,12 @@
 <template>
   <MPRModalDialog size="sm" :title="$t('Change language')">
     <div class='bg-white dark:bg-dark-back'>
-      <CustomButton v-on:click="buttonClicked('en')"
+      <CustomButton v-on:click="languageButtonClicked('en')"
                     class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
         English
       </CustomButton>
 
-      <CustomButton v-on:click="buttonClicked('he')"
+      <CustomButton v-on:click="languageButtonClicked('he')"
                     class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
         עברית
       </CustomButton>
@@ -22,7 +22,7 @@
   import { defineComponent } from 'vue';
   export default defineComponent({
     methods: {
-      buttonClicked: function (language: string) {
+      languageButtonClicked: function (language: string) {
           this.$emit('close-language-modal')
           this.$i18n.locale = language;
         }
