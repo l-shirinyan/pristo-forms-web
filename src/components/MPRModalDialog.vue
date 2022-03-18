@@ -92,7 +92,7 @@
       };
     },
     props: {
-      detailsModal: String,
+      modalWidth: Number,
       size: { type: String, required: false, default: 'default' },
       disabled: { type: Boolean, required: false, default: false },
       hasConfirmButton: { type: Boolean, required: false, default: false },
@@ -128,42 +128,16 @@
         let classes = [
           ' relative bg-white sm:rounded-lg rounded-md text-left text-gray-dark overflow-auto shadow-md p-4 sm:p-8'
         ];
-        if(this.detailsModal === 'details') {
           switch (this.size) {
             case 'md':
-              classes.push('w-[500px]');
+              classes.push(`w-[${this.modalWidth}px]`);
               break;
             case 'lg':
-              classes.push('w-[500px]');
+              classes.push(`w-[${this.modalWidth}px]`);
               break;
             default:
-              classes.push('w-[500px]');
+              classes.push(`w-[${this.modalWidth}px]`);
           }
-        } else if (this.detailsModal === 'image') {
-          switch (this.size) {
-            case 'md':
-              classes.push('w-[690px]');
-              break;
-            case 'lg':
-              classes.push('w-[690px]');
-              break;
-            default:
-              classes.push('w-[690px]');
-          }
-        }
-        else if  (this.detailsModal === 'language')
-        {
-          switch (this.size) {
-            case 'md':
-              classes.push('w-[245px]');
-              break;
-            case 'lg':
-              classes.push('w-[245px]');
-              break;
-            default:
-              classes.push('w-[245px]');
-          }
-        }
         return classes;
       }
     },

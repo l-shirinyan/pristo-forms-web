@@ -1,5 +1,5 @@
 <template>
-  <MPRModalDialog detailsModal='details' :title="$t('entity_details')">
+  <MPRModalDialog :modalWidth='500' :title="$t('entity_details')">
     <div>
       <ul class='leading-10'>
         <li>{{ $t('details_today') }}</li>

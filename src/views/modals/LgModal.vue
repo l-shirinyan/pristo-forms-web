@@ -1,5 +1,5 @@
 <template>
-  <MPRModalDialog detailsModal='language' :title="$t('Change language')">
+  <MPRModalDialog :modalWidth='245' :title="$t('Change language')">
     <div class='bg-white dark:bg-dark-back'>
       <CustomButton v-on:click="languageButtonClicked('en')"
                     class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>

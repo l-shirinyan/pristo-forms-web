@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white dark:bg-dark-header h-14 lg:justify-evenly justify-between px-5">
     <div class='max-w-6xl  md:mx-auto flex lg:pt pt-4 lg:justify-evenly justify-between'>
-      <div :class='styles.instMargin' class='lg:block hidden text-sm text-font-brown dark:text-white '>{{ $t('institution') }}</div>
+      <div class='lg:block hidden text-sm text-font-brown dark:text-white '>{{ $t('institution') }}</div>
       <div class='lg:mx-auto sm:text-base text-sm text-font-brown dark:text-white font-bold'>{{ $t('high_school') }}</div>
       <div class="lg:flex hidden">
 
@@ -42,14 +42,15 @@
           <i class='icon icon-location text-green-pin'></i>
         </CustomButton>
 
-        <CustomButton v-on:clicked="darkModeButtonClicked" :class='styles.darkMargin'>
-          <i class='icon icon-theme dark:text-white'></i>
+        <CustomButton  v-if='isDarkMode' v-on:clicked="darkModeButtonClicked">
+          <i class='icon icon-theme dark:text-white mr-6'></i>
         </CustomButton>
+
 
       </div>
 
-      <ButtonDropdown class="lg:hidden text-font-brown dark:text-white">
-        <div :class='styles.dropdown' class='absolute w-48 h-52 right-0 bg-white dark:bg-dark-back dark:outline outline-[#CED4DA33] outline-1 rounded-md shadow-xl'>
+      <ButtonDropdown  class="lg:hidden text-font-brown dark:text-white">
+        <div :class='LanguageDropdown' class='absolute w-48 h-52 right-0 bg-white dark:bg-dark-back dark:outline outline-[#CED4DA33] outline-1 rounded-md shadow-xl'>
           <div class='flex p-4'>
             <div>
               <svg class='h-5 w-5 mt-1' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -68,27 +69,21 @@
 
           <CustomButton class='flex gap-2 px-4 mt-3' v-on:clicked="isOpenDetails = true">
             <div>
-              <svg class='h-4 w-4 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" />
-              </svg>
+              <i class='icon icon-entity-details dark:text-white'></i>
             </div>
             <div>Show entity details</div>
           </CustomButton>
 
             <CustomButton class='flex gap-2 px-4 mt-6' v-on:clicked="isImageModalOpen = true">
               <div>
-                <svg class='h-4 w-4 text-font-brown dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
-                </svg>
+                <i class='icon icon-attachment dark:text-white'></i>
               </div>
               <div>Form attachment</div>
             </CustomButton>
 
           <CustomButton class='flex gap-2 px-4 mt-6' v-on:clicked="isLanguageModalOpen = true">
             <div>
-              <svg class='h-4 w-4 dark:text-white' xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
+              <i class='icon icon-locale dark:text-white'></i>
             </div>
             <div>Change language</div>
           </CustomButton>
@@ -125,13 +120,17 @@
         isImageModalOpen: false,
         isDarkMode: false,
         isLanguageModalOpen: false,
-        styles: {
-          instMargin: '',
-          darkMargin: '',
-          dropdown: '',
-
-        }
+        // styles: {
+        //   dropdown: '',
+        // }
       };
+    },
+    computed: {
+      LanguageDropdown: function() {
+        if (this.$i18n.locale === 'he') {
+          return 'right-auto -left-2'
+        }
+      }
     },
     methods: {
       closeLanguageModal: function() {
@@ -139,17 +138,6 @@
       },
       languageButtonClicked: function (language: string) {
         this.$i18n.locale = language;
-
-        if ( this.$i18n.locale === 'he') {
-          this.styles.instMargin = 'mr-0';
-          this.styles.darkMargin = 'mr-4';
-          this.styles.dropdown = 'right-auto -left-2'
-        }
-        else {
-          this.styles.instMargin = '';
-          this.styles.darkMargin = '';
-          this.styles.dropdown = ''
-        }
         this.isLanguageDropdownOpen = false
       },
       darkModeButtonClicked: function () {
