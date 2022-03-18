@@ -126,7 +126,7 @@
       },
       modalClasses: function (): string[] {
         let classes = [
-          ' relative bg-white sm:rounded-xl rounded-sm text-left text-gray-dark overflow-auto shadow-md p-3 sm:p-8'
+          ' relative bg-white sm:rounded-lg rounded-md text-left text-gray-dark overflow-auto shadow-md p-4 sm:p-8'
         ];
         if(this.detailsModal === 'details') {
           switch (this.size) {
@@ -151,17 +151,17 @@
               classes.push('w-[690px]');
           }
         }
-        else
+        else if  (this.detailsModal === 'language')
         {
           switch (this.size) {
             case 'md':
-              classes.push('w-[220px]');
+              classes.push('w-[245px]');
               break;
             case 'lg':
-              classes.push('w-[220px]');
+              classes.push('w-[245px]');
               break;
             default:
-              classes.push('w-[220px]');
+              classes.push('w-[245px]');
           }
         }
         return classes;
