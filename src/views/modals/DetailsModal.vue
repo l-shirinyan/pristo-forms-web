@@ -1,16 +1,16 @@
 <template>
-  <MPRModalDialog :modalWidth='500' :title="$t('entity_details')">
-    <div>
-      <ul class='leading-10'>
-        <li>{{ $t('details_today') }}</li>
-        <li>{{ $t('details_jerusalem') }}</li>
-        <li>{{ $t('details_bus_egged') }}</li>
+  <MPRModalDialog  :title="$t('details.entity_details')">
+    <div class='w-[430px] h-[415px]'>
+      <ul class='leading-10 text-sm sm:mt-16 mt-10'>
+        <li>{{ $t('details.today') }}</li>
+        <li>{{ $t('details.jerusalem') }}</li>
+        <li>{{ $t('details.bus_egged') }}</li>
         <div class='h-px bg-gray-200 lg:w-80 w-64 my-3'></div>
-        <li>{{ $t('details_name') }}</li>
-        <li>{{ $t('details_operator') }}</li>
-        <li>{{ $t('details_bus_line') }}</li>
-        <li>{{ $t('details_bus_type') }}</li>
-        <li>{{ $t('details_frequency') }}</li>
+        <li>{{ $t('details.name') }}</li>
+        <li>{{ $t('details.operator') }}</li>
+        <li>{{ $t('details.bus_line') }}</li>
+        <li>{{ $t('details.bus_type') }}</li>
+        <li>{{ $t('details.frequency') }}</li>
       </ul>
     </div>
   </MPRModalDialog>

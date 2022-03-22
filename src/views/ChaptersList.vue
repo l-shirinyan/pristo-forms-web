@@ -1,7 +1,12 @@
 <template>
-  <div >
-    <div class='sm:text-base text-xs text-font-brown dark:text-white font-medium max-w-6xl xl:mx-auto mx-6 lg:mt-28 sm:mt-12 mt-5'>{{ $t('complete_chapters') }}</div>
-    <ChapterListItem />
+  <div class='pb-24'>
+    <Header />
+    <div class='sm:mx-5 mx-2.5'>
+    <div class='sm:text-sm text-xs text-font-brown dark:text-white font-medium max-w-6xl lg:mx-auto lg:mt-12 sm:mt-8 mt-5'>{{ $t('chapters.complete_chapters') }}</div>
+    </div>
+    <div class='sm:mx-5 mx-2.5'>
+      <ChapterListItem />
+    </div>
   </div>
 </template>
 
@@ -11,9 +16,10 @@
   import { setDocumentLang } from '../utils/setDocumentLang';
   import { setDocumentTitle } from '../utils/setDocumentTitle';
   import ChapterListItem from './ChapterListItem.vue';
+  import Header from './Header.vue';
 
   export default defineComponent({
-    components: { ChapterListItem },
+    components: { Header, ChapterListItem },
     computed: {
       fontClass: function () {
         return `font-${this.$i18n.locale}`;

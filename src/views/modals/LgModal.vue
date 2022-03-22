@@ -1,19 +1,21 @@
 <template>
-  <MPRModalDialog :modalWidth='245' :title="$t('Change language')">
-    <div class='bg-white dark:bg-dark-back'>
-      <CustomButton v-on:click="languageButtonClicked('en')"
-                    class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
-        English
-      </CustomButton>
+  <MPRModalDialog :title="$t('Change language')">
+    <div class='bg-white dark:bg-dark-back w-48'>
+      <div class='mt-2'>
+        <CustomButton v-on:click="languageButtonClicked('en')"
+                      class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
+          English
+        </CustomButton>
 
-      <CustomButton v-on:click="languageButtonClicked('he')"
-                    class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
-        עברית
-      </CustomButton>
+        <CustomButton v-on:click="languageButtonClicked('he')"
+                      class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
+          עברית
+        </CustomButton>
 
-      <CustomButton class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
-        عربيه
-      </CustomButton>
+        <CustomButton class='cursor-pointer block px-4 py-2.5 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
+          عربيه
+        </CustomButton>
+      </div>
     </div>
   </MPRModalDialog>
 </template>
@@ -23,10 +25,10 @@
   export default defineComponent({
     methods: {
       languageButtonClicked: function (language: string) {
-          this.$emit('close-language-modal')
-          this.$i18n.locale = language;
-        }
-      },
+        this.$emit('close-language-modal')
+        this.$i18n.locale = language;
+      }
+    },
   });
 </script>
 
