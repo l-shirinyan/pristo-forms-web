@@ -1,6 +1,6 @@
 <template>
-  <MPRModalDialog :title="$t('attachment.upload_file')">
-    <div class='p-1 w-[625px] sm:h-[415px] h-72'>
+  <MPRModalDialog modalName='imageModal' :title="$t('attachment.upload_file')">
+    <div class='p-1 sm:h-[415px] h-72'>
       <div class='sm:my-16 mt-10'>{{ $t('attachment.choose_file') }}</div>
       <div class='flex gap-8 py-4 pl-4 sm:mt-8 mt-4 h-36 outline outline-2 outline-gray-200 rounded-md'>
         <div class='sm:w-36 sm:h-36 w-32 h-32'>

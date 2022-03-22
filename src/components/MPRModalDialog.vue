@@ -92,10 +92,7 @@
       };
     },
     props: {
-      modalWidth: {
-        type: Number,
-        default: 400,
-      },
+      modalName: String,
       size: { type: String, required: false, default: 'default' },
       disabled: { type: Boolean, required: false, default: false },
       hasConfirmButton: { type: Boolean, required: false, default: false },
@@ -128,7 +125,16 @@
         return classes;
       },
       modalClasses: function() {
-          return `w-[${this.modalWidth}px]`;
+        if(this.modalName === 'imageModal') {
+          return 'w-[690px]';
+        }else if(this.modalName === 'detailsModal') {
+          return  'w-[495px]'
+        }else if(this.modalName === 'languageModal') {
+          return 'w-[245px]'
+        }
+
+
+
       }
     },
     methods: {

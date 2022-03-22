@@ -77,9 +77,9 @@
           </div>
         </ButtonDropdown>
       </div>
-      <ImgModal v-if="isImageModalOpen" v-on:close="isImageModalOpen = false" />
+      <ImageModal v-if="isImageModalOpen" v-on:close="isImageModalOpen = false" />
       <DetailsModal v-if="isOpenDetails" v-on:close="isOpenDetails = false" />
-      <LgModal
+      <LanguageModal
         @close-language-modal='closeLanguageModal'
         v-if="isLanguageModalOpen"
         v-on:close="isLanguageModalOpen = false"
@@ -92,14 +92,14 @@
   import { defineComponent } from 'vue';
   import CustomButton from '../components/CustomButton.vue';
   import ButtonDropdown from '../components/ButtonDropdown.vue';
-  import ImgModal from './modals/ImgModal.vue';
+  import ImageModal from './modals/ImageModal.vue';
   import { setDocumentTheme } from '../utils/setDocumentTheme';
   import DetailsModal from './modals/DetailsModal.vue';
-  import LgModal from './modals/LgModal.vue';
+  import LanguageModal from './modals/LanguageModal.vue';
   import LanguageDropdown from '../components/LanguageDropdown.vue';
 
   export default defineComponent({
-    components: { LanguageDropdown, LgModal, DetailsModal, CustomButton, ButtonDropdown, ImgModal },
+    components: { LanguageDropdown, LanguageModal, DetailsModal, CustomButton, ButtonDropdown, ImageModal },
     data: function () {
       return {
         isOpenDetails: false,

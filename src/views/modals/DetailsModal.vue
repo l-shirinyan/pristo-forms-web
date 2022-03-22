@@ -1,6 +1,6 @@
 <template>
-  <MPRModalDialog  :title="$t('details.entity_details')">
-    <div class='w-[430px] h-[415px]'>
+  <MPRModalDialog modalName='detailsModal'  :title="$t('details.entity_details')">
+    <div class='h-[415px]'>
       <ul class='leading-10 text-sm sm:mt-16 mt-10'>
         <li>{{ $t('details.today') }}</li>
         <li>{{ $t('details.jerusalem') }}</li>
