@@ -5,21 +5,23 @@
       <div
         class='accordion-item text-midnight dark:text-dark-open-btn bg-white dark:bg-dark-header border border-gray-200 dark:border-dark-header'>
         <h2 class='accordion-header mb-0' id='headingOne'>
-          <button class='
-          accordion-button
-          relative
-          flex
-          items-center
-          w-full
-          py-4
-          px-10
-          sm:text-sm text-xs text-left font-medium
-          bg-white
-          dark:bg-dark-header
-          border-0
-          rounded-none
-          transition
-          focus:outline-none' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true'
+          <button
+            :class='formTitle'
+            class='
+            accordion-button
+            relative
+            flex
+            items-center
+            w-full
+            py-4
+            px-10
+            sm:text-sm text-xs text-left font-medium
+            bg-white
+            dark:bg-dark-header
+            border-0
+            rounded-none
+            transition
+            focus:outline-none' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true'
                   aria-controls='collapseOne'>
             {{ $t('guidelines.starting_control') }}
           </button>
@@ -41,7 +43,15 @@
 <script lang='ts'>
   import { defineComponent } from 'vue';
 
-  export default defineComponent({});
+  export default defineComponent({
+    computed: {
+      formTitle: function() {
+        if (this.$i18n.locale === 'he') {
+          return 'gap-[915px]'
+        }
+      }
+    }
+  });
 
 </script>
 
@@ -65,6 +75,7 @@
     font-family: monospace;
     line-height: 1;
     color: #190E66;
+    /*margin-right: 915px;*/
   }
     .dark .accordion-button:not(.collapsed) {
       color: #7B95FF;
@@ -86,4 +97,7 @@
       line-height: 1;
       color: #7B95FF;
     }
+  .i18n .accordion-button::after {
+
+  }
 </style>
