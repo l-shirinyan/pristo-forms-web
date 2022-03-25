@@ -1,7 +1,9 @@
 <template>
   <div v-click-away="onClickAway" v-on:clicked="openDropdown ">
     <button type="button" ref="buttonRef" v-on:click="openDropdown">
-      <i class="icon icon-dot-menu text-gray-dark"></i>
+      <div class='sm:scale-100 scale-75 sm:mt-0 mt-1.5'>
+        <i class="icon icon-dot-menu text-gray-dark "></i>
+      </div>
     </button>
     <div
       class="bg-white border border-gray-100 rounded-md shadow-md z-10 text-xs sm:text-sm"
@@ -62,3 +64,11 @@
     }
   });
 </script>
+
+
+<style scoped>
+  @media min
+  /*.icon-dot-menu:before {*/
+  /*  font-size: 14px;*/
+  /*}*/
+</style>

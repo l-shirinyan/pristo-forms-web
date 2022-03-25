@@ -1,47 +1,47 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ChaptersList from './views/ChaptersList.vue';
-import GuidelineFirst from './views/guidelines/GuidelineFirst.vue';
-import GuidelineSecond from './views/guidelines/GuidelineSecond.vue';
+import FormPage from './views/FormPages/FormPage.vue';
+import PagesPanelTabbed from './views/FormPages/PagesPanelTabbed/PagesPanelTabbed.vue';
 import Layout from './views/Layout.vue';
-import GuidelineThirdBasic from './views/guidelines/GuidelineThirdBasic.vue';
-import GuidelineThirdDetails from './views/guidelines/GuidelineThirdDetails.vue';
-import GuidelineThirdSafety from './views/guidelines/GuidelineThirdSafety.vue';
-import GuidelineThirdControl from './views/guidelines/GuidelineThirdControl.vue';
+import PagesPanelProgressBasic from './views/FormPages/PagesPanelProgressed/PagesPanelProgressBasic.vue';
+import PagesPanelProgressDetails from './views/FormPages/PagesPanelProgressed/PagesPanelProgressDetails.vue';
+import PagesPanelProgressSafety from './views/FormPages/PagesPanelProgressed/PagesPanelProgressSafety.vue';
+import PagesPanelProgressControl from './views/FormPages/PagesPanelProgressed/PagesPanelProgressControl.vue';
 
 export default createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
-      component: ChaptersList
-    },
-    {
       path: '/:step/',
       component: Layout,
       children: [
         {
+          path: '/',
+          component: ChaptersList
+        },
+        {
           path: 'guideline_first',
-          component: GuidelineFirst
+          component: FormPage
         },
         {
           path: 'guideline_second',
-          component: GuidelineSecond
+          component: PagesPanelTabbed
         },
         {
           path: 'guideline_third_basic',
-          component: GuidelineThirdBasic
+          component: PagesPanelProgressBasic
         },
         {
           path: 'guideline_third_details',
-          component: GuidelineThirdDetails
+          component: PagesPanelProgressDetails
         },
         {
           path: 'guideline_third_safety',
-          component: GuidelineThirdSafety
+          component: PagesPanelProgressSafety
         },
         {
           path: 'guideline_third_control',
-          component: GuidelineThirdControl
+          component: PagesPanelProgressControl
         },
       ]
     }

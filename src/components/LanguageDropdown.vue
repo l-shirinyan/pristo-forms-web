@@ -1,12 +1,14 @@
 <template>
-  <div v-click-away='onClickAway' v-on:clicked='openDropdown '>
+  <div v-click-away='onClickAway' v-on:clicked='openDropdown'>
     <button type='button' ref='buttonRef' v-on:click='openDropdown'>
       <div class='outline outline-1 outline-lg-btn dark:outline-none rounded-md py-1 px-2 dark:bg-dark-back'>
-        <div class='flex gap-3 '>
+        <div class='flex gap-2.5 '>
           <i class='icon icon-locale dark:text-white'></i>
           <span v-if='$i18n.locale === "en"' class='text-sm text-font-brown dark:text-white'>EN</span>
           <span  v-if='$i18n.locale === "he"' class='text-sm text-font-brown dark:text-white'>עב</span>
-          <i class='icon icon-down-arrow dark:text-white'></i>
+          <div class='-mt-1.5'>
+            <i class='icon icon-down-arrow dark:text-white'></i>
+          </div>
         </div>
       </div>
     </button>
@@ -69,3 +71,12 @@
     }
   });
 </script>
+
+<style scoped>
+  .icon-locale:before {
+    font-size: 16px;
+  }
+  .icon-down-arrow:before {
+    font-size: 11px;
+  }
+</style>

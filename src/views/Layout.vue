@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header class='fixed w-full z-10'/>
   <router-view />
 </template>
 

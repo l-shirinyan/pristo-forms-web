@@ -37,11 +37,11 @@ const messages = {
       upload_file: 'Upload File',
       choose_file: 'Please choose a file',
     },
-    guidelines: {
+    formPages: {
       starting_control: 'Guidelines for starting control',
       text: "The controllers will present themselves, briefly review the format of the expected control procedure and ask the principal to present himself and his school briefly.\n" +
         "The issues below should be noted to the principal\n" +
-        "The Ministry of Education's Control and Enforcement Licensing Administration is the body responsible for enforcing the Ministry of Education's guidelines among schools and external parties related to the education system. \"\n" +
+        "The Ministry of Education's Control and Enforcement Licensing Administration is the body responsible for enforcing the Ministry of Education's FormPages among schools and external parties related to the education system. \"\n" +
         "By virtue of its role, the administration controls the implementation of the policy, the implementation of pedagogical processes in the schools, as well as the use of the resources allocated by the ministry to the schools.\n" +
         "System won a tender to control the performance of tuition in schools in the upper division, the purpose of which is to carry out multidisciplinary control in the upper division in a nationwide distribution.",
       basic_data: 'Basic data',
@@ -89,7 +89,7 @@ const messages = {
       upload_file: 'הוספת קובץ',
       choose_file: 'אנא בחר קובץ',
     },
-    guidelines: {
+    formPages: {
       starting_control: 'הנחיות לתחילת בקרה',
       text: ".הבקרים יציגו את עצמם," +
         " יסקרו בקצרה את מתכונת הליך הבקרה הצפוי ויבקשו מהמנהל להציג את עצמו ואת בית ספרו בקצרה :יש לציין בפני המנהל את הנושאים להלן .מינהל רישוי בקרה ואכיפה במשרד החינוך," +

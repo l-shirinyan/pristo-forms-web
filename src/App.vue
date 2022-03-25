@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dark:bg-dark-back"
+    class="bg-back-gray dark:bg-dark-back"
     v-bind:class="fontClass">
     <router-view />
   </div>

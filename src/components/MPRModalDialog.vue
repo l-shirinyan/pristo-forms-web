@@ -41,7 +41,7 @@
 
               <div class='flex flex-col flex-grow overflow-hidden text-start'>
                 <div
-                  class='text-modal-title font-bold dark:font-semibold text-base sm:text-lg'
+                  class='text-modal-title font-bold dark:font-semibold dark:text-white text-base sm:text-lg'
                 >
                   {{ title }}
                 </div>
