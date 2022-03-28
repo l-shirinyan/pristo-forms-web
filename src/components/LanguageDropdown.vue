@@ -41,6 +41,7 @@
       onClickAway() {
         if (!this.preventClickaway) {
           this.isOpen = false;
+          console.log(window)
         }
       },
       openDropdown: function (): void {

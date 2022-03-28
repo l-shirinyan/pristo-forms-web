@@ -7,7 +7,7 @@
       <FormSection class='mx-4' />
     </div>
 
-      <div class='max-w-6xl fixed right-0 left-0 bottom-0 mx-auto flex justify-between py-3 bg-back-gray dark:bg-dark-back'>
+      <div class='max-w-6xl fixed sm:right-7 sm:left-7 right-4 left-4 bottom-0 mx-auto flex justify-between py-3 bg-back-gray dark:bg-dark-back'>
         <div @click="$router.push('guideline_third_details')"
              class='cursor-pointer bg-midnight dark:bg-dark-open-btn rounded float-left text-white text-sm py-1.5 px-6 bottom-11'
         >

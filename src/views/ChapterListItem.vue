@@ -14,7 +14,7 @@
       <div class='flex sm:w-36 w-24 justify-between sm:flex-row flex-row-reverse'>
         <div class='sm:mt-2 mt-1 font-medium sm:text-sm text-xs text-font-brown dark:text-white'>{{ $t(item.chapterState) }}</div>
         <div class='sm:h-8 sm:w-10 sm:mt-1 mt-0 h-7 w-7' v-if='item.chapterState === "chapters.progress" '>
-          <i class='icon icon-in-progrress text-progress-btn ml-1.5'></i>
+          <i class='icon icon-in-progrress text-progress-btn sm:ml-1.5 ml-0.5'></i>
         </div>
         <div :class='completedState' class='sm:mt-1 mt-0 sm:mr-3 mr-2' v-else-if='item.chapterState === "chapters.complete" '>
           <svg class='text-green-complete h-6 w-6' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -31,11 +31,11 @@
         {{ $t(item.openBtn) }}
       </div>
       <i
-        v-if='this.$i18n.locale === "en"' class='icon icon-purple-right-arrow sm:hidden block'
+        v-if='this.$i18n.locale === "en"' class='icon icon-purple-right-arrow dark:text-white sm:hidden block'
         @click="$router.push(`/${item.title.split('.')[1]}/guideline_first`)">
       </i>
       <i
-        v-if='this.$i18n.locale === "he"' class='icon icon-purple-left-arrow sm:hidden block'
+        v-if='this.$i18n.locale === "he"' class='icon icon-purple-left-arrow dark:text-white sm:hidden block'
         @click="$router.push(`/${item.title.split('.')[1]}/guideline_first`)">
       </i>
     </div>

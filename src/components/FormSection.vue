@@ -40,6 +40,9 @@
             class='accordion-body text-font-brown dark:text-white sm:text-sm text-xs sm:pt-2 pt-1 sm:pb-12 pb-2.5 sm:pr-20 pr-2.5 sm:pl-11 pl-2.5'>
             <p class='sm:leading-loose leading-relaxed'>
               {{ $t('formPages.text') }}
+              {{ $t('formPages.text') }}
+              {{ $t('formPages.text') }}
+              {{ $t('formPages.text') }}
             </p>
           </div>
         </div>

@@ -1,6 +1,7 @@
 <template>
-  <div class="bg-white dark:bg-dark-header h-14 justify-between px-5 shadow-md dark:shadow-none shadow-gray-200">
-    <div class='max-w-6xl lg:mx-auto flex lg:pt sm:pt-4 pt-1.5 justify-between h-14 z-10'>
+  <div class="bg-white dark:bg-dark-header h-14 justify-between px-5  shadow-gray-200 dark:shadow-dark-back"
+       :class='($route.path.includes("guideline_second") || $route.path.includes("guideline_third")) ? "shadow-sm" : "shadow-md"'>
+    <div class='max-w-6xl lg:mx-auto flex lg:pt sm:pt-4 pt-1.5 justify-between h-14 z-0'>
       <div class='flex'>
         <i v-if='$route.params.step && this.$i18n.locale === "en"' @click="$router.push('/')" class='icon icon-purple-left-arrow dark:text-white sm:mt-0.5 mt-2.5 mr-4'></i>
         <i v-if='$route.params.step && this.$i18n.locale === "he"' @click="$router.push('/')" class='icon icon-purple-right-arrow dark:text-white sm:mt-0.5 mt-2.5 ml-4'></i>
@@ -14,7 +15,7 @@
       <div class='flex'>
         <div class="sm:flex hidden">
           <LanguageDropdown>
-            <div :class='languageDropdown' id='dropdown' class='z-50 absolute h-[112] w-28 right-0 bg-white dark:bg-dark-back dark:outline outline-[#CED4DA33] outline-1 rounded-md shadow-xl'>
+            <div :class='languageDropdown' id='dropdown' class='z-50  h-[112] w-28 right-0 bg-white dark:bg-dark-back dark:outline outline-[#CED4DA33] outline-1 rounded-md shadow-xl'>
               <CustomButton v-on:clicked="languageButtonClicked('en')"
                             class='cursor-pointer w-28 block px-4 py-2 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
                 English

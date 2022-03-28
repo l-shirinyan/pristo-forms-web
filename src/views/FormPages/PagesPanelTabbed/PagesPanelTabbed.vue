@@ -1,6 +1,6 @@
 <template>
   <div class='pt-14'>
-    <div class='bg-white dark:bg-dark-header outline outline-gray-100 outline-2 dark:outline-dark-back px-5 fixed w-full z-10 relative'>
+    <div class='bg-white dark:bg-dark-header outline outline-gray-100 outline-2 dark:outline-dark-back px-5 fixed w-full z-[5]'>
       <ul class="
         nav nav-tabs
         overflow-y-auto
@@ -26,8 +26,8 @@
             pb-2
             hover:border-transparent
             focus:border-transparent
-            active
-          " id="tabs-home-tabJustify" data-bs-toggle="pill" data-bs-target="#tabs-homeJustify" role="tab"
+            active"
+             id="tabs-home-tabJustify" data-bs-toggle="pill" data-bs-target="#tabs-homeJustify" role="tab"
              aria-controls="tabs-homeJustify" aria-selected="true">{{ $t("formPages.questions_manager") }}</a>
         </li>
         <li class="nav-item flex shrink-0 mx-10 text-center" role="presentation">
@@ -57,7 +57,7 @@
         <PagesPanelTabbedCoordinator />
       </div>
 
-      <div class='max-w-6xl fixed right-0 left-0 bottom-0 mx-auto flex justify-end py-3 bg-back-gray dark:bg-dark-back'>
+      <div class='max-w-6xl fixed sm:right-7 sm:left-7 right-4 left-4 bottom-0 mx-auto flex justify-end py-3 bg-back-gray dark:bg-dark-back'>
         <div @click="$router.push('guideline_third_basic')"
              class='cursor-pointer bg-midnight dark:bg-dark-open-btn rounded text-white text-sm py-2 px-5'
         >
@@ -73,7 +73,8 @@
   import PagesPanelTabbedManager from './PagesPanelTabbedManager.vue';
   import PagesPanelTabbedCoordinator from './PagesPanelTabbedCoordinator.vue';
   export default defineComponent({
-    components: { PagesPanelTabbedCoordinator, PagesPanelTabbedManager }
+    components: { PagesPanelTabbedCoordinator, PagesPanelTabbedManager },
+
   })
 
 </script>>
