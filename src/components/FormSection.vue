@@ -55,6 +55,11 @@
     data: function () {
       return {};
     },
+    props: {
+      formSectionContent: {
+        type: Object,
+      },
+    },
     computed: {
       sectionHeader: function() {
         if (this.$i18n.locale === 'he') {

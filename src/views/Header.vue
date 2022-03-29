@@ -3,8 +3,8 @@
        :class='($route.path.includes("guideline_second") || $route.path.includes("guideline_third")) ? "shadow-sm" : "shadow-md"'>
     <div class='max-w-6xl lg:mx-auto flex lg:pt sm:pt-4 pt-1.5 justify-between h-14 z-0'>
       <div class='flex'>
-        <i v-if='$route.params.step && this.$i18n.locale === "en"' @click="$router.push('/')" class='icon icon-purple-left-arrow dark:text-white sm:mt-0.5 mt-2.5 mr-4'></i>
-        <i v-if='$route.params.step && this.$i18n.locale === "he"' @click="$router.push('/')" class='icon icon-purple-right-arrow dark:text-white sm:mt-0.5 mt-2.5 ml-4'></i>
+          <i v-if='$route.params.step && this.$i18n.locale === "en"' @click="$router.push('/')" class='icon icon-purple-left-arrow dark:text-white sm:mt-0.5 mt-2.5 mr-4'></i>
+          <i v-if='$route.params.step && this.$i18n.locale === "he"' @click="$router.push('/')" class='icon icon-purple-right-arrow dark:text-white sm:mt-0.5 mt-2.5 ml-4'></i>
         <div class='sm:text-base text-sm text-font-brown dark:text-white font-bold sm:my-0 my-auto'>
           {{ $t('header.high_school') }}
           <span v-if='$route.params.step' class='sm:inline block text-chapter-title dark:text-white sm:text-sm text-xs font-medium sm:mx-2.5 sm:mt-0 mt-1'>
@@ -139,11 +139,11 @@
   .icon-entity-details:before {
     font-size: 11px;
   }
-  .icon-attachment:before,
-  .icon-locale:before,
-  .icon-location:before,
-  .icon-purple-left-arrow:before,
-  .icon-purple-right-arrow:before {
-    font-size: 12px;
-  }
+  /*.icon-attachment:before,*/
+  /*.icon-locale:before,*/
+  /*.icon-location:before,*/
+  /*.icon-purple-left-arrow:before,*/
+  /*.icon-purple-right-arrow:before {*/
+  /*  font-size: 12px;*/
+  /*}*/
 </style>
