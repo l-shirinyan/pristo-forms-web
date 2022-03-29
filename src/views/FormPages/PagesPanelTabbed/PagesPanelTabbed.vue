@@ -58,7 +58,7 @@
       </div>
 
       <div class='max-w-6xl fixed sm:right-7 sm:left-7 right-4 left-4 bottom-0 mx-auto flex justify-end py-3 bg-back-gray dark:bg-dark-back'>
-        <div @click="$router.push('guideline_third_basic')"
+        <div @click="$router.push('progress_basic')"
              class='cursor-pointer bg-midnight dark:bg-dark-open-btn rounded text-white text-sm py-2 px-5'
         >
           {{$t('formPages.finish') }}

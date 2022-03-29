@@ -13,7 +13,7 @@
       >
         {{ $t('formPages.previous') }}
       </div>
-      <div @click="$router.push('guideline_third_details')"
+      <div @click="$router.push('progress_details')"
            class='cursor-pointer bg-midnight dark:bg-dark-open-btn rounded text-white text-sm py-1.5 px-10 float-right  bottom-11'
       >
         {{ $t('formPages.next') }}

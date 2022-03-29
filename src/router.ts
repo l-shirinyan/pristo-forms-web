@@ -28,19 +28,19 @@ export default createRouter({
           component: PagesPanelTabbed
         },
         {
-          path: 'guideline_third_basic',
+          path: 'progress_basic',
           component: PagesPanelProgressBasic
         },
         {
-          path: 'guideline_third_details',
+          path: 'progress_details',
           component: PagesPanelProgressDetails
         },
         {
-          path: 'guideline_third_safety',
+          path: 'progress_safety',
           component: PagesPanelProgressSafety
         },
         {
-          path: 'guideline_third_control',
+          path: 'progress_control',
           component: PagesPanelProgressControl
         },
       ]
