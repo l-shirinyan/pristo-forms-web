@@ -4,41 +4,64 @@
     <div class='sm:text-sm text-xs text-font-brown dark:text-white font-medium max-w-6xl lg:mx-auto lg:mt-12 sm:mt-8 mt-7'>{{ $t('chapters.complete_chapters') }}</div>
     </div>
     <div class='sm:mx-5 mx-2.5'>
-      <ChapterListItem />
+      <ChapterListItem v-for='(item, index) in chaptersInfo' :key="index" :chapter='item'/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import { setDocumentDirection } from '../utils/setDocumentDirection';
-  import { setDocumentLang } from '../utils/setDocumentLang';
-  import { setDocumentTitle } from '../utils/setDocumentTitle';
   import ChapterListItem from './ChapterListItem.vue';
   import Header from './Header.vue';
 
   export default defineComponent({
-    components: { Header, ChapterListItem },
-    computed: {
-      fontClass: function () {
-        return `font-${this.$i18n.locale}`;
-      }
-    },
-    created() {
-      setDocumentLang(this.$i18n.locale);
-      setDocumentDirection(this.$i18n.locale);
-      setDocumentTitle(this.$t('app_title'));
-    },
-    watch: {
-      '$i18n.locale': function (newLocale: string, oldLocale: string) {
-        if (newLocale === oldLocale) {
-          return;
+    data: function () {
+      return {
+        chaptersInfo: [
+          {
+            id: 1,
+            title: 'chapters.inspection_details',
+            chapterState: 'chapters.progress',
+            openBtn: 'chapters.open',
+          },
+          {
+            id: 2,
+            title: 'chapters.teacher_workforce',
+            chapterState: 'chapters.complete',
+            openBtn: 'chapters.open',
+          },
+          {
+            id: 3,
+            title: 'chapters.teacher_jobs',
+            chapterState: 'chapters.not_started',
+            openBtn: 'chapters.open',
+          },
+          {
+            id: 4,
+            title: 'chapters.parental_payments',
+            chapterState: 'chapters.not_started',
+            openBtn: 'chapters.open',
+          },
+          {
+            id: 5,
+            title: 'chapters.cleanliness_health',
+            chapterState: 'chapters.not_started',
+            openBtn: 'chapters.open',
+          },
+          {
+            id: 6,
+            title: 'chapters.summary_with_manager',
+            chapterState: 'chapters.not_started',
+            openBtn: 'chapters.open',
+          },
+        ],
+        isScreenSmall: false,
+        styles: {
+
         }
-        setDocumentLang(newLocale);
-        setDocumentDirection(newLocale);
-        setDocumentTitle(this.$t('app_title'));
-      }
+      };
     },
+    components: { Header, ChapterListItem },
   });
 </script>
 

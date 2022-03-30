@@ -77,7 +77,4 @@
   .icon-locale:before {
     font-size: 16px;
   }
-  .icon-down-arrow:before {
-    font-size: 11px;
-  }
 </style>

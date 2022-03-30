@@ -16,12 +16,12 @@
         <div class="sm:flex hidden">
           <LanguageDropdown>
             <div :class='languageDropdown' id='dropdown' class='z-50  h-[112] w-28 right-0 bg-white dark:bg-dark-back dark:outline outline-[#CED4DA33] outline-1 rounded-md shadow-xl'>
-              <CustomButton v-on:clicked="languageButtonClicked('en')"
+              <CustomButton v-on:clicked="languageButtonClicked('en') && !isRtlLanguage"
                             class='cursor-pointer w-28 block px-4 py-2 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
                 English
               </CustomButton>
               <div class='h-px bg-gray-200 dark:bg-[#CED4DA33] w-28'></div>
-              <CustomButton v-on:clicked="languageButtonClicked('he')"
+              <CustomButton v-on:clicked="languageButtonClicked('he') && isRtlLanguage"
                             class='cursor-pointer w-28 block px-4 py-2 text-sm text-font-brown dark:text-white hover:bg-selected-dropdown dark:hover:bg-dark-selected-dropdown'>
                 עברית
               </CustomButton>
@@ -34,7 +34,7 @@
         </div>
 
         <CustomButton  v-on:clicked="darkModeButtonClicked" class='mb-4'>
-          <div class='w-11 sm:mt-0 mt-0.5'>
+          <div class='w-11 sm:mt-0 mt-2.5'>
             <i class='icon icon-theme dark:text-white mx-4'></i>
           </div>
         </CustomButton>
@@ -56,7 +56,7 @@
 
             <CustomButton class='flex gap-2 px-4 mt-3' v-on:clicked="isOpenDetails = true">
               <div>
-                <i class='icon icon-entity-details dark:text-white mb-8'></i>
+                <i  class='icon icon-entity-details dark:text-white mb-8'></i>
               </div>
               <div class='text-xm mt-1'>Show entity details</div>
             </CustomButton>
@@ -70,7 +70,7 @@
 
             <CustomButton class='flex gap-2 px-4 mt-5' v-on:clicked="isLanguageModalOpen = true">
               <div>
-                <i class='icon icon-locale dark:text-white8'></i>
+                <i class='icon icon-locale dark:text-white'></i>
               </div>
               <div class='text-xm mt-1'>Change language</div>
             </CustomButton>
@@ -97,25 +97,28 @@
   import DetailsModal from './modals/DetailsModal.vue';
   import LanguageModal from './modals/LanguageModal.vue';
   import LanguageDropdown from '../components/LanguageDropdown.vue';
+  import { setDocumentDirection } from '../utils/setDocumentDirection';
+  import { isRtlLanguage } from '../utils/isRtlLanguage';
 
   export default defineComponent({
-    components: { LanguageDropdown, LanguageModal, DetailsModal, CustomButton, ButtonDropdown, ImageModal },
+    components: { setDocumentDirection, LanguageDropdown, LanguageModal, DetailsModal, CustomButton, ButtonDropdown, ImageModal },
     data: function () {
       return {
         isOpenDetails: false,
         isImageModalOpen: false,
         isDarkMode: false,
         isLanguageModalOpen: false,
+        isRtlLanguage: false,
       };
     },
     computed: {
       mainDropdown: function() {
-        if (this.$i18n.locale === 'he') {
+        if (this.isRtlLanguage) {
           return 'right-auto -left-2 h-48'
         }
       },
       languageDropdown: function() {
-        if (this.$i18n.locale === 'he') {
+        if (this.isRtlLanguage) {
           return 'right-auto -left-28'
         }
       },
@@ -126,6 +129,7 @@
       },
       languageButtonClicked: function (language: string) {
         this.$i18n.locale = language;
+        this.isRtlLanguage = !this.isRtlLanguage;
       },
       darkModeButtonClicked: function () {
         this.isDarkMode = !this.isDarkMode;
@@ -136,14 +140,4 @@
 </script>
 
 <style scoped>
-  .icon-entity-details:before {
-    font-size: 11px;
-  }
-  /*.icon-attachment:before,*/
-  /*.icon-locale:before,*/
-  /*.icon-location:before,*/
-  /*.icon-purple-left-arrow:before,*/
-  /*.icon-purple-right-arrow:before {*/
-  /*  font-size: 12px;*/
-  /*}*/
 </style>

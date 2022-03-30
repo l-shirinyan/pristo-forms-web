@@ -26,7 +26,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-work-managment:before {
   content: '\e900';
 }
@@ -83,9 +82,11 @@
 }
 .icon-purple-right-arrow:before {
   content: '\e912';
+  font-size: 12px;
 }
 .icon-purple-left-arrow:before {
   content: '\e913';
+  font-size: 12px;
 }
 .icon-projects-sidebar:before {
   content: '\e914';
@@ -137,9 +138,11 @@
 }
 .icon-location:before {
   content: '\e924';
+  font-size: 12px;
 }
 .icon-locale:before {
   content: '\e925';
+  font-size: 12px;
 }
 .icon-left-arrow-sidebar:before {
   content: '\e926';
@@ -179,6 +182,7 @@
 }
 .icon-entity-details:before {
   content: '\e932';
+  font-size: 11px;
 }
 .icon-edit-profile:before {
   content: '\e933';
@@ -188,6 +192,7 @@
 }
 .icon-down-arrow:before {
   content: '\e935';
+  font-size: 11px;
 }
 .icon-dot-menu:before {
   content: '\e936';
@@ -224,6 +229,7 @@
 }
 .icon-attachment:before {
   content: '\e941';
+  font-size: 12px;
 }
 .icon-assets:before {
   content: '\e942';
